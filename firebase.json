@@ -1,7 +1,7 @@
 {
   "hosting": {
     "public": "build/web",
-    "site": "io-photobooth-dev",
+    "site": "photobooth-tm-30",
     "cleanUrls": true,
     "trailingSlash": false,
     "ignore": [
@@ -12,7 +12,8 @@
       "__/**"
     ],
     "rewrites": [
-      { "source": "/share/**",
+      {
+        "source": "/share/**",
         "function": "shareImage"
       },
       {
@@ -21,24 +22,32 @@
       }
     ],
     "headers": [
-      { "source": "**/*.@(eot|otf|ttf|ttc|woff|font.css)",
-        "headers": [{
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        }]
+      {
+        "source": "**/*.@(eot|otf|ttf|ttc|woff|font.css)",
+        "headers": [
+          {
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+          }
+        ]
       },
-      { "source": "**/*.@(jpg|jpeg|gif|png)",
-        "headers": [{
-          "key": "Cache-Control",
-          "value": "max-age=3600"
-        }]
+      {
+        "source": "**/*.@(jpg|jpeg|gif|png)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=3600"
+          }
+        ]
       },
       {
         "source": "**",
-        "headers": [{
-          "key": "Cache-Control",
+        "headers": [
+          {
+            "key": "Cache-Control",
             "value": "no-cache, no-store, must-revalidate"
-        }]
+          }
+        ]
       }
     ],
     "predeploy": []
@@ -69,6 +78,18 @@
       "enabled": true,
       "port": 5002,
       "host": "0.0.0.0"
+    }
+  },
+  "flutter": {
+    "platforms": {
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "photobooth-tm-30-a3631",
+          "configurations": {
+            "web": "1:544366997993:web:3dfc9ff3c50163c6129b78"
+          }
+        }
+      }
     }
   }
 }
