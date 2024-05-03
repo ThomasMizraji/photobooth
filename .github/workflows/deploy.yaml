@@ -16,10 +16,10 @@ jobs:
           channel: master
       - run: flutter packages get
       - run: flutter build web --web-renderer html --dart-define SHARING_ENABLED=true
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - uses: FirebaseExtended/action-hosting-deploy
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_KEY }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
           projectId: photobooth-tm-30-a3631
           expires: 30d
           channelId: live
