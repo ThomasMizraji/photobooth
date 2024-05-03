@@ -51,15 +51,4 @@ class DefaultFirebaseOptions {
         );
     }
   }
-
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBvvpn0eRa37dv2Kyz7a0X5Lz3UhwNc3u4',
-    appId: '1:544366997993:web:3dfc9ff3c50163c6129b78',
-    messagingSenderId: '544366997993',
-    projectId: 'photobooth-tm-30-a3631',
-    authDomain: 'photobooth-tm-30-a3631.firebaseapp.com',
-    storageBucket: 'photobooth-tm-30-a3631.appspot.com',
-    measurementId: 'G-3B2FJZG538',
-  );
-
 }
