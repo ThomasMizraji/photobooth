@@ -1,95 +1,16 @@
 {
   "hosting": {
     "public": "build/web",
-    "site": "photobooth-tm-30",
-    "cleanUrls": true,
-    "trailingSlash": false,
     "ignore": [
-      ".firebase",
       "firebase.json",
-      "functions/node_modules",
-      "functions/src",
-      "__/**"
+      "**/.*",
+      "**/node_modules/**"
     ],
     "rewrites": [
-      {
-        "source": "/share/**",
-        "function": "shareImage"
-      },
       {
         "source": "**",
         "destination": "/index.html"
       }
-    ],
-    "headers": [
-      {
-        "source": "**/*.@(eot|otf|ttf|ttc|woff|font.css)",
-        "headers": [
-          {
-            "key": "Access-Control-Allow-Origin",
-            "value": "*"
-          }
-        ]
-      },
-      {
-        "source": "**/*.@(jpg|jpeg|gif|png)",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "max-age=3600"
-          }
-        ]
-      },
-      {
-        "source": "**",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "no-cache, no-store, must-revalidate"
-          }
-        ]
-      }
-    ],
-    "predeploy": []
-  },
-  "functions": {
-    "source": "functions",
-    "runtime": "nodejs14",
-    "predeploy": [
-      "npm --prefix ./functions run test",
-      "npm --prefix ./functions run build"
     ]
-  },
-  "storage": {
-    "rules": "storage.rules"
-  },
-  "emulators": {
-    "hosting": {
-      "name": "app",
-      "port": 5000,
-      "host": "0.0.0.0"
-    },
-    "functions": {
-      "name": "api",
-      "port": 5001,
-      "host": "0.0.0.0"
-    },
-    "ui": {
-      "enabled": true,
-      "port": 5002,
-      "host": "0.0.0.0"
-    }
-  },
-  "flutter": {
-    "platforms": {
-      "dart": {
-        "lib/firebase_options.dart": {
-          "projectId": "photobooth-tm-30-a3631",
-          "configurations": {
-            "web": "1:544366997993:web:3161ce8caa6f115c129b78"
-          }
-        }
-      }
-    }
   }
 }
